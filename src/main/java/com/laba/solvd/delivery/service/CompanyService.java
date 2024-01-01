@@ -11,7 +11,7 @@ public interface CompanyService {
 
     void create(Company company);
 
-    void updateCompanyByName(int id, String newName);
+    void updateCompanyByName(int id, String name);
 
     void deleteById(int id);
 }

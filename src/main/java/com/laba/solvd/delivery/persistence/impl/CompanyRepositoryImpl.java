@@ -78,10 +78,10 @@ public class CompanyRepositoryImpl implements CompanyRepository {
     }
 
     @Override
-    public void updateCompanyByName(int id, String newName) {
+    public void updateCompanyByName(int id, String name) {
         Connection connection = connectionPool.getConnection();
         try (PreparedStatement ps = connection.prepareStatement("Update companies set name = ? where id = ? ")) {
-            ps.setString(1, newName);
+            ps.setString(1, name);
             ps.setInt(2, id);
             ps.executeUpdate();
         } catch (SQLException e) {

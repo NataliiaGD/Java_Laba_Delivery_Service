@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.laba.solvd.delivery.persistence.FeedbackRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        Insert into feedbacks(rating,comments,customer_id,order_id) values
+        (#{rating},#{comments},#{customer_id},#{order_id})
+    </insert>
+
+    <select id="retrieveAll" resultMap="FeedbackResultMap">
+        Select * from feedbacks;
+    </select>
+
+    <delete id="deleteById">
+        Delete from feedbacks where id = #{id}
+    </delete>
+
+    <resultMap id="FeedbackResultMap" type="com.laba.solvd.delivery.domain.Feedback" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="rating" property="rating"/>
+        <result column="comments" property="comments"/>
+        <result column="customer_id" property="customer_id"/>
+        <result column="order_id" property="order_id"/>
+    </resultMap>
+</mapper>

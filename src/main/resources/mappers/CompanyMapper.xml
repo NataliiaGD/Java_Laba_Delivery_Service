@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.laba.solvd.delivery.persistence.CompanyRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        Insert into companies(name) values (#{name})
+    </insert>
+
+    <sql id="companySelect">
+        Select id, name from companies
+    </sql>
+
+    <select id="findById" resultMap="CompanyResultMap">
+        <include refid="companySelect"/>
+        where id = #{id}
+    </select>
+
+    <select id="retrieveAll" resultMap="CompanyResultMap">
+        Select * from companies;
+    </select>
+
+    <update id="updateCompanyByName">
+        Update companies set name = #{name} where id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        Delete from companies where id = #{id}
+    </delete>
+
+    <resultMap id="CompanyResultMap" type="com.laba.solvd.delivery.domain.Company" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+</mapper>

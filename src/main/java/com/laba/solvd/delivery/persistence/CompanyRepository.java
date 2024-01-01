@@ -1,6 +1,7 @@
 package com.laba.solvd.delivery.persistence;
 
 import com.laba.solvd.delivery.domain.Company;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public interface CompanyRepository {
 
     void create(Company company);
 
-    void updateCompanyByName(int id, String newName);
+    void updateCompanyByName(@Param("id") int id, @Param("name") String name);
 
     void deleteById(int id);
 

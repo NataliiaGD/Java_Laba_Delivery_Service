@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.laba.solvd.delivery.persistence.VehicleRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        Insert into vehicles(vehicle_type,company_id) values (#{vehicle_type},#{company_id})
+    </insert>
+
+    <select id="retrieveAll" resultMap="VehicleResultMap">
+        Select * from vehicles;
+    </select>
+
+    <delete id="deleteById">
+        Delete from vehicles where id = #{id}
+    </delete>
+
+    <resultMap id="VehicleResultMap" type="com.laba.solvd.delivery.domain.Vehicle" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="vehicle_type" property="vehicle_type"/>
+        <result column="company_id" property="company_id"/>
+    </resultMap>
+</mapper>

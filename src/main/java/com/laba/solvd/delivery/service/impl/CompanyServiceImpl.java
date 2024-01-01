@@ -31,8 +31,8 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public void updateCompanyByName(int id, String newName) {
-        companyRepository.updateCompanyByName(id, newName);
+    public void updateCompanyByName(int id, String name) {
+        companyRepository.updateCompanyByName(id, name);
     }
 
     @Override

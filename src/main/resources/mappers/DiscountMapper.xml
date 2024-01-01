@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.laba.solvd.delivery.persistence.DiscountRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        Insert into discounts(discount_amount,order_id) values (#{discount_amount},#{order_id})
+    </insert>
+
+    <select id="retrieveAll" resultMap="DiscountResultMap">
+        Select * from discounts;
+    </select>
+
+    <delete id="deleteById">
+        Delete from discounts where id = #{id}
+    </delete>
+
+    <resultMap id="DiscountResultMap" type="com.laba.solvd.delivery.domain.Discount" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="discount_amount" property="discount_amount"/>
+        <result column="order_id" property="order_id"/>
+    </resultMap>
+</mapper>

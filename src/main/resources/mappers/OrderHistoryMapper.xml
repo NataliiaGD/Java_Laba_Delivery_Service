@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.laba.solvd.delivery.persistence.OrderHistoryRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        Insert into order_histories(customer_id,order_id) values (#{customer_id},#{order_id})
+    </insert>
+
+    <select id="retrieveAll" resultMap="OrderHistoryResultMap">
+        Select * from order_histories;
+    </select>
+
+    <delete id="deleteById">
+        Delete from order_histories where id = #{id}
+    </delete>
+
+    <resultMap id="OrderHistoryResultMap" type="com.laba.solvd.delivery.domain.OrderHistory" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="customer_id" property="customer_id"/>
+        <result column="order_id" property="order_id"/>
+    </resultMap>
+</mapper>
