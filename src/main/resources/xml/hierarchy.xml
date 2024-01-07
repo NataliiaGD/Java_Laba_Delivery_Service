@@ -1,0 +1,29 @@
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hierarchy.xsd">
+    <company>
+        <id>1</id>
+        <name>Delivery_Company1</name>
+    </company>
+    <courier>
+        <id>2</id>
+        <first_name>Bob</first_name>
+        <last_name>Peterson</last_name>
+        <company_id>1</company_id>
+    </courier>
+    <customer>
+        <id>1</id>
+        <first_name>Tom</first_name>
+        <last_name>Brown</last_name>
+    </customer>
+    <delivery_address>
+        <id>2</id>
+        <address>Wellington avenue</address>
+        <customer_id>2</customer_id>
+    </delivery_address>
+    <order>
+        <id>1</id>
+        <order_details>burger</order_details>
+        <customer_id>1</customer_id>
+        <courier_id>2</courier_id>
+    </order>
+
+</data>

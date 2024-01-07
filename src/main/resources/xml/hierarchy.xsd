@@ -1,0 +1,59 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="data" type="DataType"/>
+    <xs:complexType name="CompanyType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="company" type="CompanyType"/>
+
+    <xs:complexType name="CourierType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="last_name" type="xs:string"/>
+            <xs:element name="company_id" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="courier" type="CourierType"/>
+
+    <xs:complexType name="CustomerType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="last_name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="customer" type="CustomerType"/>
+
+    <xs:complexType name="OrderType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="order_details" type="xs:string"/>
+            <xs:element name="customer_id" type="xs:int"/>
+            <xs:element name="courier_id" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="order" type="OrderType"/>
+
+    <xs:complexType name="DeliveryAddressType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="address" type="xs:string"/>
+            <xs:element name="customer_id" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="delivery_address" type="DeliveryAddressType"/>
+
+    <xs:complexType name="DataType">
+        <xs:sequence>
+            <xs:element name="company" type="CompanyType" maxOccurs="unbounded"/>
+            <xs:element name="courier" type="CourierType" maxOccurs="unbounded"/>
+            <xs:element name="customer" type="CustomerType" maxOccurs="unbounded"/>
+            <xs:element name="delivery_address" type="DeliveryAddressType" maxOccurs="unbounded"/>
+            <xs:element name="order" type="OrderType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
