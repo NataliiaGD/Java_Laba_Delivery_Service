@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class PaymentRepositoryMybatisImpl implements PaymentRepository {
-    @Override
-    public Payment findById(int id) {
-        return null;
-    }
 
     @Override
     public List<Payment> retrieveAll() {
@@ -26,11 +22,6 @@ public class PaymentRepositoryMybatisImpl implements PaymentRepository {
             PaymentRepository paymentRepository = sqlSession.getMapper(PaymentRepository.class);
             paymentRepository.create(payment);
         }
-
-    }
-
-    @Override
-    public void updatePaymentByPaymentDetails(int id, String newPaymentDetails) {
 
     }
 

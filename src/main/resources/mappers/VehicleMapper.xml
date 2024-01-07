@@ -16,7 +16,7 @@
 
     <resultMap id="VehicleResultMap" type="com.laba.solvd.delivery.domain.Vehicle" autoMapping="false">
         <id column="id" property="id"/>
-        <result column="vehicle_type" property="vehicle_type"/>
-        <result column="company_id" property="company_id"/>
+        <result column="vehicle_type" property="vehicleType"/>
+        <result column="company_id" property="companyId"/>
     </resultMap>
 </mapper>

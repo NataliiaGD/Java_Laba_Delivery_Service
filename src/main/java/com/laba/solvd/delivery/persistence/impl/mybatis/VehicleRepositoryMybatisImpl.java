@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class VehicleRepositoryMybatisImpl implements VehicleRepository {
-    @Override
-    public Vehicle findById(int id) {
-        return null;
-    }
 
     @Override
     public List<Vehicle> retrieveAll() {
@@ -26,11 +22,6 @@ public class VehicleRepositoryMybatisImpl implements VehicleRepository {
             VehicleRepository vehicleRepository = sqlSession.getMapper(VehicleRepository.class);
             vehicleRepository.create(vehicle);
         }
-
-    }
-
-    @Override
-    public void updateVehicleByVehicleType(int id, String newVehicleType) {
 
     }
 

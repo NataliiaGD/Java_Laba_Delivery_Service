@@ -21,8 +21,8 @@
 
     <resultMap id="DeliveryStatusResultMap" type="com.laba.solvd.delivery.domain.DeliveryStatus" autoMapping="false">
         <id column="id" property="id"/>
-        <result column="actual_status" property="actual_status"/>
-        <result column="customer_id" property="customer_id"/>
-        <result column="courier_id" property="courier_id"/>
+        <result column="actual_status" property="actualStatus"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="courier_id" property="courierId"/>
     </resultMap>
 </mapper>

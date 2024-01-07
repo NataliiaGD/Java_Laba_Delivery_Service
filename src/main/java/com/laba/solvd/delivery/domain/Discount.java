@@ -2,13 +2,13 @@ package com.laba.solvd.delivery.domain;
 
 public class Discount {
     private int id;
-    private int discount_amount;
-    private int order_id;
+    private int discountAmount;
+    private int orderId;
 
-    public Discount(int id, int discount_amount, int order_id) {
+    public Discount(int id, int discountAmount, int orderId) {
         this.id = id;
-        this.discount_amount = discount_amount;
-        this.order_id = order_id;
+        this.discountAmount = discountAmount;
+        this.orderId = orderId;
     }
 
     public Discount() {
@@ -19,8 +19,8 @@ public class Discount {
     public String toString() {
         return "Discount{" +
                 "id=" + id +
-                ", discount_amount=" + discount_amount +
-                ", order_id=" + order_id +
+                ", discount_amount=" + discountAmount +
+                ", order_id=" + orderId +
                 '}';
     }
 
@@ -32,19 +32,19 @@ public class Discount {
         this.id = id;
     }
 
-    public int getDiscount_amount() {
-        return discount_amount;
+    public int getDiscountAmount() {
+        return discountAmount;
     }
 
-    public void setDiscount_amount(int discount_amount) {
-        this.discount_amount = discount_amount;
+    public void setDiscountAmount(int discountAmount) {
+        this.discountAmount = discountAmount;
     }
 
-    public int getOrder_id() {
-        return order_id;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 }

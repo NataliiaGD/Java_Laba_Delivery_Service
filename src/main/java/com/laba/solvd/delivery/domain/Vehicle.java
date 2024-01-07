@@ -2,13 +2,13 @@ package com.laba.solvd.delivery.domain;
 
 public class Vehicle {
     private int id;
-    private String vehicle_type;
-    private int company_id;
+    private String vehicleType;
+    private int companyId;
 
-    public Vehicle(int id, String vehicle_type, int company_id) {
+    public Vehicle(int id, String vehicleType, int companyId) {
         this.id = id;
-        this.vehicle_type = vehicle_type;
-        this.company_id = company_id;
+        this.vehicleType = vehicleType;
+        this.companyId = companyId;
     }
 
     public Vehicle() {
@@ -19,8 +19,8 @@ public class Vehicle {
     public String toString() {
         return "Vehicle{" +
                 "id=" + id +
-                ", vehicle_type='" + vehicle_type + '\'' +
-                ", company_id=" + company_id +
+                ", vehicle_type='" + vehicleType + '\'' +
+                ", company_id=" + companyId +
                 '}';
     }
 
@@ -32,19 +32,19 @@ public class Vehicle {
         this.id = id;
     }
 
-    public String getVehicle_type() {
-        return vehicle_type;
+    public String getVehicleType() {
+        return vehicleType;
     }
 
-    public void setVehicle_type(String vehicle_type) {
-        this.vehicle_type = vehicle_type;
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
-    public int getCompany_id() {
-        return company_id;
+    public int getCompanyId() {
+        return companyId;
     }
 
-    public void setCompany_id(int company_id) {
-        this.company_id = company_id;
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 }

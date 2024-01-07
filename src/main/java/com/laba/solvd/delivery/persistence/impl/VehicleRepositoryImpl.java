@@ -8,22 +8,36 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class VehicleRepositoryImpl implements VehicleRepository {
     private static final Logger LOGGER = LogManager.getLogger(VehicleRepositoryImpl.class);
-    private ConnectionPool connectionPool = ConnectionPool.create("jdbc:mysql://127.0.0.1:3306/delivery_service",
-            "root", "Qwerty123");
-
-    @Override
-    public Vehicle findById(int id) {
-        return null;
-    }
+    private ConnectionPool connectionPool = ConnectionPool.getInstance();
 
     @Override
     public List<Vehicle> retrieveAll() {
-        return null;
+        List<Vehicle> vehicles = new ArrayList<>();
+        Connection connection = connectionPool.getConnection();
+        try (PreparedStatement ps = connection.prepareStatement("SELECT*FROM vehicles")) {
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                Vehicle vehicle = new Vehicle();
+                vehicle.setId(resultSet.getInt("id"));
+                vehicle.setVehicleType(resultSet.getString("vehicle_type"));
+                vehicle.setCompanyId(resultSet.getInt("company_id"));
+                vehicles.add(vehicle);
+            }
+            resultSet.close();
+
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage());
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return vehicles;
     }
 
     @Override
@@ -31,19 +45,14 @@ public class VehicleRepositoryImpl implements VehicleRepository {
         Connection connection = connectionPool.getConnection();
         try (PreparedStatement ps = connection.prepareStatement("INSERT INTO vehicles (vehicle_type,company_id) values (?,?)"
                 , PreparedStatement.RETURN_GENERATED_KEYS)) {
-            ps.setString(1, vehicle.getVehicle_type());
-            ps.setInt(2, vehicle.getCompany_id());
+            ps.setString(1, vehicle.getVehicleType());
+            ps.setInt(2, vehicle.getCompanyId());
             ps.executeUpdate();
         } catch (SQLException e) {
             LOGGER.error(e.getMessage());
         } finally {
             connectionPool.releaseConnection(connection);
         }
-
-    }
-
-    @Override
-    public void updateVehicleByVehicleType(int id, String newVehicleType) {
 
     }
 

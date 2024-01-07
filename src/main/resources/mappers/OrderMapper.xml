@@ -16,8 +16,8 @@
 
     <resultMap id="OrderResultMap" type="com.laba.solvd.delivery.domain.Order" autoMapping="false">
         <id column="id" property="id"/>
-        <result column="order_details" property="order_details"/>
-        <result column="customer_id" property="customer_id"/>
-        <result column="courier_id" property="courier_id"/>
+        <result column="order_details" property="orderDetails"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="courier_id" property="courierId"/>
     </resultMap>
 </mapper>

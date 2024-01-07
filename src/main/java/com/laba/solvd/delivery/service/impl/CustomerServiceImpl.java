@@ -14,23 +14,14 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<Customer> retrieveAll() {
-        return null;
+        List<Customer> customers = customerRepository.retrieveAll();
+        return customers;
     }
 
     @Override
     public void create(Customer customer) {
         customerRepository.create(customer);
-    }
-
-    @Override
-    public void updateCustomerByFirstName(int id, String newFirstName) {
-
     }
 
     @Override

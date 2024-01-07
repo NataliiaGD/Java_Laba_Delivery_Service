@@ -14,23 +14,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<Order> retrieveAll() {
-        return null;
+        List<Order> orders = orderRepository.retrieveAll();
+        return orders;
     }
 
     @Override
     public void create(Order order) {
         orderRepository.create(order);
-    }
-
-    @Override
-    public void updateOrderByOrderDetails(int id, String newOrderDetails) {
-
     }
 
     @Override

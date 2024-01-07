@@ -17,6 +17,6 @@
     <resultMap id="DeliveryAddressResultMap" type="com.laba.solvd.delivery.domain.DeliveryAddress" autoMapping="false">
         <id column="id" property="id"/>
         <result column="address" property="address"/>
-        <result column="customer_id" property="customer_id"/>
+        <result column="customer_id" property="customerId"/>
     </resultMap>
 </mapper>

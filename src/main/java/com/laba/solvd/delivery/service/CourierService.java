@@ -11,7 +11,5 @@ public interface CourierService {
 
     void create(Courier courier);
 
-    void updateCourierByFirstName(int id, String newFirstName);
-
     void deleteById(int id);
 }

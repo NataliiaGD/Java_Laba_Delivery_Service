@@ -1,6 +1,1 @@
-2023-12-28 22:10:23 INFO  Program:37 - Hello World2024-01-01 19:42:23 INFO  Program:75 - [Courier{id=4, first_name='David', last_name='Davis', company_id=1}, Courier{id=5, first_name='Jack', last_name='Smith', company_id=1}, Courier{id=6, first_name='John', last_name='Peterson', company_id=2}, Courier{id=8, first_name='Tomas', last_name='Parker', company_id=1}]
-2024-01-01 19:54:28 INFO  Program:76 - [Courier{id=4, first_name='David', last_name='Davis', company_id=1}, Courier{id=5, first_name='Jack', last_name='Smith', company_id=1}, Courier{id=6, first_name='John', last_name='Peterson', company_id=2}, Courier{id=8, first_name='Tomas', last_name='Parker', company_id=1}]
-2024-01-01 19:54:28 INFO  Program:77 - HELLLLOOOO!!!
-2024-01-01 20:11:59 INFO  Program:80 - [Courier{id=4, first_name='David', last_name='Davis', company_id=1}, Courier{id=5, first_name='Jack', last_name='Smith', company_id=1}, Courier{id=6, first_name='John', last_name='Peterson', company_id=2}, Courier{id=8, first_name='Tomas', last_name='Parker', company_id=1}]
-2024-01-01 20:11:59 INFO  Program:81 - HELLLLOOOO!!!
-2024-01-01 20:33:36 INFO  Program:82 - [Courier{id=4, first_name='David', last_name='Davis', company_id=1}, Courier{id=5, first_name='Jack', last_name='Smith', company_id=1}, Courier{id=6, first_name='John', last_name='Peterson', company_id=2}, Courier{id=8, first_name='Tomas', last_name='Parker', company_id=1}]
+

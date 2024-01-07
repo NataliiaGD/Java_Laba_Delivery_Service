@@ -14,23 +14,14 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public Vehicle findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<Vehicle> retrieveAll() {
-        return null;
+        List<Vehicle> vehicles = vehicleRepository.retrieveAll();
+        return vehicles;
     }
 
     @Override
     public void create(Vehicle vehicle) {
-
-    }
-
-    @Override
-    public void updateVehicleByVehicleType(int id, String newVehicleType) {
-
+        vehicleRepository.create(vehicle);
     }
 
     @Override

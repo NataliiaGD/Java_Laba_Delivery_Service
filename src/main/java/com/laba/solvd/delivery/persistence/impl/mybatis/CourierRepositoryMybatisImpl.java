@@ -38,11 +38,6 @@ public class CourierRepositoryMybatisImpl implements CourierRepository {
     }
 
     @Override
-    public void updateCourierByFirstName(int id, String newFirstName) {
-
-    }
-
-    @Override
     public void deleteById(int id) {
         try (SqlSession sqlSession = PersistenceConfig.getSessionFactory().openSession()) {
             CourierRepository courierRepository = sqlSession.getMapper(CourierRepository.class);

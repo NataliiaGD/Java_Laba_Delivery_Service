@@ -12,7 +12,7 @@ public class CompanyRepositoryMybatisImpl implements CompanyRepository {
     public Company findById(int id) {
         try (SqlSession sqlSession = PersistenceConfig.getSessionFactory().openSession()) {
             CompanyRepository companyRepository = sqlSession.getMapper(CompanyRepository.class);
-            return companyRepository.findById(8);
+            return companyRepository.findById(id);
         }
     }
 

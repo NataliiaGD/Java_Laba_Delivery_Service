@@ -4,15 +4,15 @@ public class Feedback {
     private int id;
     private int rating;
     private String comments;
-    private int customer_id;
-    private int order_id;
+    private int customerId;
+    private int orderId;
 
-    public Feedback(int id, int rating, String comments, int customer_id, int order_id) {
+    public Feedback(int id, int rating, String comments, int customerId, int orderId) {
         this.id = id;
         this.rating = rating;
         this.comments = comments;
-        this.customer_id = customer_id;
-        this.order_id = order_id;
+        this.customerId = customerId;
+        this.orderId = orderId;
     }
 
     public Feedback() {
@@ -25,8 +25,8 @@ public class Feedback {
                 "id=" + id +
                 ", rating=" + rating +
                 ", comments='" + comments + '\'' +
-                ", customer_id=" + customer_id +
-                ", order_id=" + order_id +
+                ", customer_id=" + customerId +
+                ", order_id=" + orderId +
                 '}';
     }
 
@@ -54,19 +54,19 @@ public class Feedback {
         this.comments = comments;
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public int getOrder_id() {
-        return order_id;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 }

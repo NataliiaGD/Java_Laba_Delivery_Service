@@ -2,15 +2,15 @@ package com.laba.solvd.delivery.domain;
 
 public class Courier {
     private int id;
-    private String first_name;
-    private String last_name;
-    private int company_id;
+    private String firstName;
+    private String lastName;
+    private int companyId;
 
-    public Courier(int id, String first_name, String last_name, int company_id) {
+    public Courier(int id, String firstName, String lastName, int companyId) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.company_id = company_id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.companyId = companyId;
     }
 
     public Courier() {
@@ -21,9 +21,9 @@ public class Courier {
     public String toString() {
         return "Courier{" +
                 "id=" + id +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", company_id=" + company_id +
+                ", first_name='" + firstName + '\'' +
+                ", last_name='" + lastName + '\'' +
+                ", company_id=" + companyId +
                 '}';
     }
 
@@ -35,27 +35,27 @@ public class Courier {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public int getCompany_id() {
-        return company_id;
+    public int getCompanyId() {
+        return companyId;
     }
 
-    public void setCompany_id(int company_id) {
-        this.company_id = company_id;
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 }

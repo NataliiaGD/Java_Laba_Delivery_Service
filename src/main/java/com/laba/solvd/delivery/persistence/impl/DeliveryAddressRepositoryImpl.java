@@ -8,22 +8,36 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeliveryAddressRepositoryImpl implements DeliveryAddressRepository {
     private static final Logger LOGGER = LogManager.getLogger(DeliveryAddressRepositoryImpl.class);
-    private ConnectionPool connectionPool = ConnectionPool.create("jdbc:mysql://127.0.0.1:3306/delivery_service",
-            "root", "Qwerty123");
-
-    @Override
-    public DeliveryAddress findById(int id) {
-        return null;
-    }
+    private ConnectionPool connectionPool = ConnectionPool.getInstance();
 
     @Override
     public List<DeliveryAddress> retrieveAll() {
-        return null;
+        List<DeliveryAddress> deliveryAddresses = new ArrayList<>();
+        Connection connection = connectionPool.getConnection();
+        try (PreparedStatement ps = connection.prepareStatement("SELECT*FROM delivery_addresses")) {
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                DeliveryAddress deliveryAddress = new DeliveryAddress();
+                deliveryAddress.setId(resultSet.getInt("id"));
+                deliveryAddress.setAddress(resultSet.getString("address"));
+                deliveryAddress.setCustomerId(resultSet.getInt("customer_id"));
+                deliveryAddresses.add(deliveryAddress);
+            }
+            resultSet.close();
+
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage());
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return deliveryAddresses;
     }
 
     @Override
@@ -32,18 +46,13 @@ public class DeliveryAddressRepositoryImpl implements DeliveryAddressRepository 
         try (PreparedStatement ps = connection.prepareStatement("INSERT INTO delivery_addresses (address,customer_id) values (?,?)"
                 , PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, address.getAddress());
-            ps.setInt(2, address.getCustomer_id());
+            ps.setInt(2, address.getCustomerId());
             ps.executeUpdate();
         } catch (SQLException e) {
             LOGGER.error(e.getMessage());
         } finally {
             connectionPool.releaseConnection(connection);
         }
-
-    }
-
-    @Override
-    public void updateDeliveryAddressByAddress(int id, String newAddress) {
 
     }
 

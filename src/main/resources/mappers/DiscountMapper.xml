@@ -16,7 +16,7 @@
 
     <resultMap id="DiscountResultMap" type="com.laba.solvd.delivery.domain.Discount" autoMapping="false">
         <id column="id" property="id"/>
-        <result column="discount_amount" property="discount_amount"/>
-        <result column="order_id" property="order_id"/>
+        <result column="discount_amount" property="discountAmount"/>
+        <result column="order_id" property="orderId"/>
     </resultMap>
 </mapper>

@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class CustomerRepositoryMybatisImpl implements CustomerRepository {
-    @Override
-    public Customer findById(int id) {
-        return null;
-    }
 
     @Override
     public List<Customer> retrieveAll() {
@@ -26,11 +22,6 @@ public class CustomerRepositoryMybatisImpl implements CustomerRepository {
             CustomerRepository customerRepository = sqlSession.getMapper(CustomerRepository.class);
             customerRepository.create(customer);
         }
-
-    }
-
-    @Override
-    public void updateCustomerByFirstName(int id, String newFirstName) {
 
     }
 

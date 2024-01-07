@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class DeliveryAddressRepositoryMybatisImpl implements DeliveryAddressRepository {
-    @Override
-    public DeliveryAddress findById(int id) {
-        return null;
-    }
 
     @Override
     public List<DeliveryAddress> retrieveAll() {
@@ -26,11 +22,6 @@ public class DeliveryAddressRepositoryMybatisImpl implements DeliveryAddressRepo
             DeliveryAddressRepository deliveryAddressRepository = sqlSession.getMapper(DeliveryAddressRepository.class);
             deliveryAddressRepository.create(address);
         }
-
-    }
-
-    @Override
-    public void updateDeliveryAddressByAddress(int id, String newAddress) {
 
     }
 
