@@ -17,22 +17,19 @@ public class CourierServiceImpl implements CourierService {
 
     @Override
     public Courier findById(int id) {
-        return null;
+        Courier courier = courierRepository.findById(id);
+        return courier;
     }
 
     @Override
     public List<Courier> retrieveAll() {
-        return null;
+        List<Courier> couriers = courierRepository.retrieveAll();
+        return couriers;
     }
 
     @Override
     public void create(Courier courier) {
         courierRepository.create(courier);
-    }
-
-    @Override
-    public void updateCourierByFirstName(int id, String newFirstName) {
-
     }
 
     @Override

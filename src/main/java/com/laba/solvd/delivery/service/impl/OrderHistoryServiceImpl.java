@@ -14,13 +14,9 @@ public class OrderHistoryServiceImpl implements OrderHistoryService {
     }
 
     @Override
-    public OrderHistory findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<OrderHistory> retrieveAll() {
-        return null;
+        List<OrderHistory> orderHistories = orderHistoryRepository.retrieveAll();
+        return orderHistories;
     }
 
     @Override

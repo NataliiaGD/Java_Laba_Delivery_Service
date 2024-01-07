@@ -8,23 +8,38 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeliveryStatusRepositoryImpl implements DeliveryStatusRepository {
     private static final Logger LOGGER = LogManager.getLogger(DeliveryStatusRepositoryImpl.class);
 
-    private ConnectionPool connectionPool = ConnectionPool.create("jdbc:mysql://127.0.0.1:3306/delivery_service",
-            "root", "Qwerty123");
-
-    @Override
-    public DeliveryStatus findById(int id) {
-        return null;
-    }
+    private ConnectionPool connectionPool = ConnectionPool.getInstance();
 
     @Override
     public List<DeliveryStatus> retrieveAll() {
-        return null;
+        List<DeliveryStatus> deliveryStatuses = new ArrayList<>();
+        Connection connection = connectionPool.getConnection();
+        try (PreparedStatement ps = connection.prepareStatement("SELECT*FROM delivery_statuses")) {
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                DeliveryStatus deliveryStatus = new DeliveryStatus();
+                deliveryStatus.setId(resultSet.getInt("id"));
+                deliveryStatus.setActualStatus(resultSet.getString("actual_status"));
+                deliveryStatus.setCustomerId(resultSet.getInt("customer_id"));
+                deliveryStatus.setCourierId(resultSet.getInt("courier_id"));
+                deliveryStatuses.add(deliveryStatus);
+            }
+            resultSet.close();
+
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage());
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return deliveryStatuses;
     }
 
     @Override
@@ -32,20 +47,15 @@ public class DeliveryStatusRepositoryImpl implements DeliveryStatusRepository {
         Connection connection = connectionPool.getConnection();
         try (PreparedStatement ps = connection.prepareStatement("INSERT INTO delivery_statuses (actual_status,customer_id,courier_id) values (?,?,?)"
                 , PreparedStatement.RETURN_GENERATED_KEYS)) {
-            ps.setString(1, status.getActual_status());
-            ps.setInt(2, status.getCustomer_id());
-            ps.setInt(3, status.getCourier_id());
+            ps.setString(1, status.getActualStatus());
+            ps.setInt(2, status.getCustomerId());
+            ps.setInt(3, status.getCourierId());
             ps.executeUpdate();
         } catch (SQLException e) {
             LOGGER.error(e.getMessage());
         } finally {
             connectionPool.releaseConnection(connection);
         }
-
-    }
-
-    @Override
-    public void updateDeliveryStatusByActualStatus(int id, String newActualStatus) {
 
     }
 

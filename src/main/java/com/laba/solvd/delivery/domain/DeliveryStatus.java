@@ -2,15 +2,15 @@ package com.laba.solvd.delivery.domain;
 
 public class DeliveryStatus {
     private int id;
-    private String actual_status;
-    private int customer_id;
-    private int courier_id;
+    private String actualStatus;
+    private int customerId;
+    private int courierId;
 
-    public DeliveryStatus(int id, String actual_status, int customer_id, int courier_id) {
+    public DeliveryStatus(int id, String actualStatus, int customerId, int courierId) {
         this.id = id;
-        this.actual_status = actual_status;
-        this.customer_id = customer_id;
-        this.courier_id = courier_id;
+        this.actualStatus = actualStatus;
+        this.customerId = customerId;
+        this.courierId = courierId;
     }
 
     public DeliveryStatus() {
@@ -21,9 +21,9 @@ public class DeliveryStatus {
     public String toString() {
         return "DeliveryStatus{" +
                 "id=" + id +
-                ", actual_status='" + actual_status + '\'' +
-                ", customer_id=" + customer_id +
-                ", courier_id=" + courier_id +
+                ", actual_status='" + actualStatus + '\'' +
+                ", customer_id=" + customerId +
+                ", courier_id=" + courierId +
                 '}';
     }
 
@@ -35,27 +35,27 @@ public class DeliveryStatus {
         this.id = id;
     }
 
-    public String getActual_status() {
-        return actual_status;
+    public String getActualStatus() {
+        return actualStatus;
     }
 
-    public void setActual_status(String actual_status) {
-        this.actual_status = actual_status;
+    public void setActualStatus(String actualStatus) {
+        this.actualStatus = actualStatus;
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public int getCourier_id() {
-        return courier_id;
+    public int getCourierId() {
+        return courierId;
     }
 
-    public void setCourier_id(int courier_id) {
-        this.courier_id = courier_id;
+    public void setCourierId(int courierId) {
+        this.courierId = courierId;
     }
 }

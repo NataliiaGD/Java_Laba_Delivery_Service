@@ -17,24 +17,19 @@ public class ConnectionPool {
     private List<Connection> connectionPool;
     private List<Connection> usedConnections = new ArrayList<>();
 
-    private ConnectionPool(String url, String user, String password, List<Connection> pool) {
+    private ConnectionPool(String url, String user, String password) {
         this.url = url;
         this.user = user;
         this.password = password;
-        this.connectionPool = pool;
+        this.connectionPool = new ArrayList<>();
     }
 
+    public static synchronized ConnectionPool getInstance() {
+        if (instance == null) {
+            instance = new ConnectionPool(DataBaseConfig.getUrl(), DataBaseConfig.getUsername(), DataBaseConfig.getPassword());
 
-    public static synchronized ConnectionPool create(String url, String user, String password) {
-        List<Connection> pool = new ArrayList<>(INITIAL_POOL_SIZE);
-        for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
-            try {
-                pool.add(createConnection(url, user, password));
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
         }
-        return new ConnectionPool(url, user, password, pool);
+        return instance;
     }
 
     private static Connection createConnection(

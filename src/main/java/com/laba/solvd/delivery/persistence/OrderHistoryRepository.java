@@ -5,7 +5,6 @@ import com.laba.solvd.delivery.domain.OrderHistory;
 import java.util.List;
 
 public interface OrderHistoryRepository {
-    OrderHistory findById(int id);
 
     List<OrderHistory> retrieveAll();
 

@@ -14,23 +14,14 @@ public class DiscountServiceImpl implements DiscountService {
     }
 
     @Override
-    public Discount findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<Discount> retrieveAll() {
-        return null;
+        List<Discount> discounts = discountRepository.retrieveAll();
+        return discounts;
     }
 
     @Override
     public void create(Discount discount) {
         discountRepository.create(discount);
-    }
-
-    @Override
-    public void updateDiscountByDiscountAmount(int id, String newDiscountAmount) {
-
     }
 
     @Override

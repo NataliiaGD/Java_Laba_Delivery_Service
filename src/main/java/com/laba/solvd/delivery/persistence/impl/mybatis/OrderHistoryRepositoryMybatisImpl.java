@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class OrderHistoryRepositoryMybatisImpl implements OrderHistoryRepository {
-    @Override
-    public OrderHistory findById(int id) {
-        return null;
-    }
 
     @Override
     public List<OrderHistory> retrieveAll() {

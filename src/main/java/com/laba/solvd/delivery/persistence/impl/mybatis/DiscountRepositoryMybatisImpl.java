@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class DiscountRepositoryMybatisImpl implements DiscountRepository {
-    @Override
-    public Discount findById(int id) {
-        return null;
-    }
 
     @Override
     public List<Discount> retrieveAll() {
@@ -26,11 +22,6 @@ public class DiscountRepositoryMybatisImpl implements DiscountRepository {
             DiscountRepository discountRepository = sqlSession.getMapper(DiscountRepository.class);
             discountRepository.create(discount);
         }
-    }
-
-    @Override
-    public void updateDiscountByDiscountAmount(int id, String newDiscountAmount) {
-
     }
 
     @Override

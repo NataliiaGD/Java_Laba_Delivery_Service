@@ -14,23 +14,14 @@ public class DeliveryStatusServiceImpl implements DeliveryStatusService {
     }
 
     @Override
-    public DeliveryStatus findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<DeliveryStatus> retrieveAll() {
-        return null;
+        List<DeliveryStatus> deliveryStatuses = deliveryStatusRepository.retrieveAll();
+        return deliveryStatuses;
     }
 
     @Override
     public void create(DeliveryStatus status) {
         deliveryStatusRepository.create(status);
-    }
-
-    @Override
-    public void updateDeliveryStatusByActualStatus(int id, String newActualStatus) {
-
     }
 
     @Override

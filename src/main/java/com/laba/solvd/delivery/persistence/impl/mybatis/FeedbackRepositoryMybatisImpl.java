@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class FeedbackRepositoryMybatisImpl implements FeedbackRepository {
-    @Override
-    public Feedback findById(int id) {
-        return null;
-    }
 
     @Override
     public List<Feedback> retrieveAll() {
@@ -26,11 +22,6 @@ public class FeedbackRepositoryMybatisImpl implements FeedbackRepository {
             FeedbackRepository feedbackRepository = sqlSession.getMapper(FeedbackRepository.class);
             feedbackRepository.create(feedback);
         }
-    }
-
-    @Override
-    public void updateFeedbackByComments(int id, String newComments) {
-
     }
 
     @Override

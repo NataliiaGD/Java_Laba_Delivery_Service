@@ -14,23 +14,14 @@ public class FeedbackServiceImpl implements FeedbackService {
     }
 
     @Override
-    public Feedback findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<Feedback> retrieveAll() {
-        return null;
+        List<Feedback> feedbacks = feedbackRepository.retrieveAll();
+        return feedbacks;
     }
 
     @Override
     public void create(Feedback feedback) {
         feedbackRepository.create(feedback);
-    }
-
-    @Override
-    public void updateFeedbackByComments(int id, String newComments) {
-
     }
 
     @Override

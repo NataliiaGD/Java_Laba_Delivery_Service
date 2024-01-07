@@ -15,8 +15,7 @@ import java.util.List;
 
 public class CompanyRepositoryImpl implements CompanyRepository {
     private static final Logger LOGGER = LogManager.getLogger(CompanyRepositoryImpl.class);
-    private ConnectionPool connectionPool = ConnectionPool.create("jdbc:mysql://127.0.0.1:3306/delivery_service",
-            "root", "Qwerty123");
+    private ConnectionPool connectionPool = ConnectionPool.getInstance();
 
     @Override
     public Company findById(int id) {

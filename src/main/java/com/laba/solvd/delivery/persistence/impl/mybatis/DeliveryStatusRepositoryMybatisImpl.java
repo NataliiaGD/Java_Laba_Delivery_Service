@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class DeliveryStatusRepositoryMybatisImpl implements DeliveryStatusRepository {
-    @Override
-    public DeliveryStatus findById(int id) {
-        return null;
-    }
 
     @Override
     public List<DeliveryStatus> retrieveAll() {
@@ -26,11 +22,6 @@ public class DeliveryStatusRepositoryMybatisImpl implements DeliveryStatusReposi
             DeliveryStatusRepository deliveryStatusRepository = sqlSession.getMapper(DeliveryStatusRepository.class);
             deliveryStatusRepository.create(status);
         }
-
-    }
-
-    @Override
-    public void updateDeliveryStatusByActualStatus(int id, String newActualStatus) {
 
     }
 

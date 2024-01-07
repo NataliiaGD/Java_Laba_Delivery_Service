@@ -14,23 +14,14 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
     }
 
     @Override
-    public DeliveryAddress findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<DeliveryAddress> retrieveAll() {
-        return null;
+        List<DeliveryAddress> deliveryAddresses = deliveryAddressRepository.retrieveAll();
+        return deliveryAddresses;
     }
 
     @Override
     public void create(DeliveryAddress address) {
         deliveryAddressRepository.create(address);
-    }
-
-    @Override
-    public void updateDeliveryAddressByAddress(int id, String newAddress) {
-
     }
 
     @Override

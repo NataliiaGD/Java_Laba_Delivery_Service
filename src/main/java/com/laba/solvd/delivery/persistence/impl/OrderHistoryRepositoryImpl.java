@@ -8,22 +8,36 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderHistoryRepositoryImpl implements OrderHistoryRepository {
     private static final Logger LOGGER = LogManager.getLogger(OrderHistoryRepositoryImpl.class);
-    private ConnectionPool connectionPool = ConnectionPool.create("jdbc:mysql://127.0.0.1:3306/delivery_service",
-            "root", "Qwerty123");
-
-    @Override
-    public OrderHistory findById(int id) {
-        return null;
-    }
+    private ConnectionPool connectionPool = ConnectionPool.getInstance();
 
     @Override
     public List<OrderHistory> retrieveAll() {
-        return null;
+        List<OrderHistory> orderHistories = new ArrayList<>();
+        Connection connection = connectionPool.getConnection();
+        try (PreparedStatement ps = connection.prepareStatement("SELECT*FROM order_histories")) {
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                OrderHistory orderHistory = new OrderHistory();
+                orderHistory.setId(resultSet.getInt("id"));
+                orderHistory.setCustomerId(resultSet.getInt("customer_id"));
+                orderHistory.setOrderId(resultSet.getInt("order_id"));
+                orderHistories.add(orderHistory);
+            }
+            resultSet.close();
+
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage());
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return orderHistories;
     }
 
     @Override
@@ -31,8 +45,8 @@ public class OrderHistoryRepositoryImpl implements OrderHistoryRepository {
         Connection connection = connectionPool.getConnection();
         try (PreparedStatement ps = connection.prepareStatement("INSERT INTO order_histories (customer_id,order_id) values (?,?)"
                 , PreparedStatement.RETURN_GENERATED_KEYS)) {
-            ps.setInt(1, orderHistory.getOrder_id());
-            ps.setInt(2, orderHistory.getCustomer_id());
+            ps.setInt(1, orderHistory.getOrderId());
+            ps.setInt(2, orderHistory.getCustomerId());
             ps.executeUpdate();
         } catch (SQLException e) {
             LOGGER.error(e.getMessage());

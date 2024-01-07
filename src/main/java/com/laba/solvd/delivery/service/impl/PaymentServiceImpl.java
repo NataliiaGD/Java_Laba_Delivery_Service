@@ -14,23 +14,14 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public Payment findById(int id) {
-        return null;
-    }
-
-    @Override
     public List<Payment> retrieveAll() {
-        return null;
+        List<Payment> payments = paymentRepository.retrieveAll();
+        return payments;
     }
 
     @Override
     public void create(Payment payment) {
         paymentRepository.create(payment);
-    }
-
-    @Override
-    public void updatePaymentByPaymentDetails(int id, String newPaymentDetails) {
-
     }
 
     @Override

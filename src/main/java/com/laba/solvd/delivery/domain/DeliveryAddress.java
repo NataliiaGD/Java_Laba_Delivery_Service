@@ -3,12 +3,12 @@ package com.laba.solvd.delivery.domain;
 public class DeliveryAddress {
     private int id;
     private String address;
-    private int customer_id;
+    private int customerId;
 
-    public DeliveryAddress(int id, String address, int customer_id) {
+    public DeliveryAddress(int id, String address, int customerId) {
         this.id = id;
         this.address = address;
-        this.customer_id = customer_id;
+        this.customerId = customerId;
     }
 
     public DeliveryAddress() {
@@ -20,7 +20,7 @@ public class DeliveryAddress {
         return "DeliveryAddress{" +
                 "id=" + id +
                 ", address='" + address + '\'' +
-                ", customer_id=" + customer_id +
+                ", customer_id=" + customerId +
                 '}';
     }
 
@@ -40,11 +40,11 @@ public class DeliveryAddress {
         this.address = address;
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 }

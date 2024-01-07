@@ -29,7 +29,7 @@ public class Program {
 //        CourierService courierService = new CourierServiceImpl(courierRepository);
 //        LOGGER.info(company);
 //
-//        List<Company> companies = companyService.retrieveAll();
+        //List<Company> companies = companyService.retrieveAll();
 //
 //        Company myCompany = new Company();
 //        myCompany.setName("Delivery_company5");
@@ -43,9 +43,9 @@ public class Program {
 //        courier.setCompany_id(1);
 //        courierService.create(courier);
 //
-//        companies = companyService.retrieveAll();
+        //companies = companyService.retrieveAll();
 //
-//        LOGGER.info(companies);
+        //LOGGER.info(companies);
 
 
         //MyBatis Implementation

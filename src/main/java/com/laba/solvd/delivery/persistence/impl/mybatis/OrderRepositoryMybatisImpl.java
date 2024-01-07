@@ -7,10 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class OrderRepositoryMybatisImpl implements OrderRepository {
-    @Override
-    public Order findById(int id) {
-        return null;
-    }
 
     @Override
     public List<Order> retrieveAll() {
@@ -26,11 +22,6 @@ public class OrderRepositoryMybatisImpl implements OrderRepository {
             OrderRepository orderRepository = sqlSession.getMapper(OrderRepository.class);
             orderRepository.create(order);
         }
-    }
-
-    @Override
-    public void updateOrderByOrderDetails(int id, String newOrderDetails) {
-
     }
 
     @Override
