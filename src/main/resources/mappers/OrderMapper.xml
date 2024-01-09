@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.laba.solvd.delivery.persistence.OrderRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        Insert into orders(order_details,customer_id,courier_id) values (#{order_details},#{customer_id},#{courier_id})
+    </insert>
+
+    <select id="retrieveAll" resultMap="OrderResultMap">
+        Select * from orders;
+    </select>
+
+    <delete id="deleteById">
+        Delete from orders where id = #{id}
+    </delete>
+
+    <resultMap id="OrderResultMap" type="com.laba.solvd.delivery.domain.Order" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="order_details" property="orderDetails"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="courier_id" property="courierId"/>
+    </resultMap>
+</mapper>

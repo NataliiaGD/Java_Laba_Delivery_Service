@@ -1,0 +1,32 @@
+package com.laba.solvd.delivery.service.impl;
+
+import com.laba.solvd.delivery.domain.Feedback;
+import com.laba.solvd.delivery.persistence.FeedbackRepository;
+import com.laba.solvd.delivery.service.FeedbackService;
+
+import java.util.List;
+
+public class FeedbackServiceImpl implements FeedbackService {
+    private final FeedbackRepository feedbackRepository;
+
+    public FeedbackServiceImpl(FeedbackRepository feedbackRepository) {
+        this.feedbackRepository = feedbackRepository;
+    }
+
+    @Override
+    public List<Feedback> retrieveAll() {
+        List<Feedback> feedbacks = feedbackRepository.retrieveAll();
+        return feedbacks;
+    }
+
+    @Override
+    public void create(Feedback feedback) {
+        feedbackRepository.create(feedback);
+    }
+
+    @Override
+    public void deleteById(int id) {
+        feedbackRepository.deleteById(id);
+
+    }
+}

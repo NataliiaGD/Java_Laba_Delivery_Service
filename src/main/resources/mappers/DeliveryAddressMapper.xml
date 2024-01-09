@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.laba.solvd.delivery.persistence.DeliveryAddressRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        Insert into delivery_addresses(address,customer_id) values (#{address},#{customer_id})
+    </insert>
+
+    <select id="retrieveAll" resultMap="DeliveryAddressResultMap">
+        Select * from delivery_addresses;
+    </select>
+
+    <delete id="deleteById">
+        Delete from delivery_addresses where id = #{id}
+    </delete>
+
+    <resultMap id="DeliveryAddressResultMap" type="com.laba.solvd.delivery.domain.DeliveryAddress" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="address" property="address"/>
+        <result column="customer_id" property="customerId"/>
+    </resultMap>
+</mapper>

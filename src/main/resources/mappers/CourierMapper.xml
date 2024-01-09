@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.laba.solvd.delivery.persistence.CourierRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        Insert into couriers(first_name,last_name,company_id) values (#{first_name},#{last_name},#{company_id})
+    </insert>
+
+    <sql id="courierSelect">
+        Select id, name from couriers
+    </sql>
+
+    <select id="findById" resultMap="CourierResultMap">
+        <include refid="courierSelect"/>
+        where id = #{id}
+    </select>
+
+    <select id="retrieveAll" resultMap="CourierResultMap">
+        Select * from couriers;
+    </select>
+
+    <delete id="deleteById">
+        Delete from couriers where id = #{id}
+    </delete>
+
+    <resultMap id="CourierResultMap" type="com.laba.solvd.delivery.domain.Courier" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="first_name" property="firstName"/>
+        <result column="last_name" property="lastName"/>
+        <result column="company_id" property="companyId"/>
+    </resultMap>
+</mapper>
