@@ -16,7 +16,7 @@
 
     <resultMap id="PaymentResultMap" type="com.laba.solvd.delivery.domain.Payment" autoMapping="false">
         <id column="id" property="id"/>
-        <result column="payment_details" property="payment_details"/>
-        <result column="order_id" property="order_id"/>
+        <result column="payment_details" property="paymentDetails"/>
+        <result column="order_id" property="orderId"/>
     </resultMap>
 </mapper>

@@ -17,9 +17,7 @@ public class Program {
 
     private static final Logger LOGGER = LogManager.getLogger(Program.class);
 
-    static {
-        System.setProperty("log4j.configurationFile", "log4j2.xml");
-    }
+
 
     public static void main(String[] args) {
 //        CompanyRepository companyRepository = new CompanyRepositoryImpl();
@@ -52,13 +50,13 @@ public class Program {
 
         SqlSession sqlSession = PersistenceConfig.openSession();
 
-        CompanyRepository companyRepository = sqlSession.getMapper(CompanyRepository.class);
-
-        Company company = companyRepository.findById(1);
-        LOGGER.info(company);
-
-        List<Company> companies = companyRepository.retrieveAll();
-        LOGGER.info(companies);
+//        CompanyRepository companyRepository = sqlSession.getMapper(CompanyRepository.class);
+//
+//        Company company = companyRepository.findById(1);
+//        LOGGER.info(company);
+//
+//        List<Company> companies = companyRepository.retrieveAll();
+//        LOGGER.info(companies);
 
         CourierRepository courierRepository = sqlSession.getMapper(CourierRepository.class);
         List<Courier> couriers = courierRepository.retrieveAll();

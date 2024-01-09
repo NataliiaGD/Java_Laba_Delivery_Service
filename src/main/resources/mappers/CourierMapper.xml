@@ -25,8 +25,8 @@
 
     <resultMap id="CourierResultMap" type="com.laba.solvd.delivery.domain.Courier" autoMapping="false">
         <id column="id" property="id"/>
-        <result column="first_name" property="first_name"/>
-        <result column="last_name" property="last_name"/>
-        <result column="company_id" property="company_id"/>
+        <result column="first_name" property="firstName"/>
+        <result column="last_name" property="lastName"/>
+        <result column="company_id" property="companyId"/>
     </resultMap>
 </mapper>
