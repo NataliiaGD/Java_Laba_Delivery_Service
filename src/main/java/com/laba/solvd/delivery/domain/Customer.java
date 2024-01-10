@@ -1,12 +1,20 @@
 package com.laba.solvd.delivery.domain;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.List;
 
+@XmlRootElement(name = "customer")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Customer {
     private int id;
     private String firstName;
     private String lastName;
+    @XmlElementWrapper(name = "orders")
+    @XmlElement(name = "order")
     private List<Order> orders;
+    @XmlElementWrapper(name = "deliveryAddresses")
+    @XmlElement(name = "deliveryAddress")
     private List<DeliveryAddress> deliveryAddresses;
 
     public Customer(int id, String firstName, String lastName) {
@@ -23,8 +31,10 @@ public class Customer {
     public String toString() {
         return "Customer{" +
                 "id=" + id +
-                ", first_name='" + firstName + '\'' +
-                ", last_name='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", orders=" + orders +
+                ", deliveryAddresses=" + deliveryAddresses +
                 '}';
     }
 

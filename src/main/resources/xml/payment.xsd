@@ -1,0 +1,14 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="PaymentType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="paymentDetails" type="xs:string"/>
+            <xs:element name="orderId" type="xs:int"/>
+            <xs:element name="localDate" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="payment" type="PaymentType"/>
+
+</xs:schema>

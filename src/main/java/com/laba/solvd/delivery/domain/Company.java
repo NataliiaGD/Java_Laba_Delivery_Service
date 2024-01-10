@@ -1,10 +1,16 @@
 package com.laba.solvd.delivery.domain;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.List;
 
+@XmlRootElement(name = "company")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Company {
     private int id;
     private String name;
+    @XmlElementWrapper(name = "couriers")
+    @XmlElement(name = "courier")
     private List<Courier> couriers;
 
     public Company(int id, String name) {
@@ -21,6 +27,7 @@ public class Company {
         return "Company{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", couriers=" + couriers +
                 '}';
     }
 
