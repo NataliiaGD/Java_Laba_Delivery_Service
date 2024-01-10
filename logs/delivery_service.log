@@ -1,0 +1,2 @@
+2024-01-10 21:54:30 INFO  JAXBParser:25 - Customer{id=1, firstName='Tom', lastName='Brown', orders=[Order{id=1, orderDetails='burger', courierId=1, customerId=1}, Order{id=2, orderDetails='pizza', courierId=2, customerId=1}, Order{id=3, orderDetails='sushi', courierId=3, customerId=1}], deliveryAddresses=[DeliveryAddress{id=1, address='Leeton Ridge Street,1', customer_id=1}, DeliveryAddress{id=2, address='Wellington Ave.,2', customer_id=1}]}
+2024-01-10 21:54:30 INFO  JAXBParser:33 - Payment{id=1, paymentDetails='cash', orderId=1, localDate=2023-01-01}

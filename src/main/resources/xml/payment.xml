@@ -1,0 +1,8 @@
+<payment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    xsi:noNamespaceSchemaLocation="payment.xsd">
+
+    <id>1</id>
+    <paymentDetails>cash</paymentDetails>
+    <orderId>1</orderId>
+    <localDate>2023-01-01</localDate>
+</payment>

@@ -1,9 +1,21 @@
 package com.laba.solvd.delivery.domain;
 
+import com.laba.solvd.delivery.parser.MyAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import java.time.LocalDate;
+
+@XmlRootElement(name = "payment")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Payment {
     private int id;
     private String paymentDetails;
     private int orderId;
+    @XmlJavaTypeAdapter(MyAdapter.class)
+    private LocalDate localDate;
 
     public Payment(int id, String paymentDetails, int orderId) {
         this.id = id;
@@ -19,8 +31,9 @@ public class Payment {
     public String toString() {
         return "Payment{" +
                 "id=" + id +
-                ", payment_details='" + paymentDetails + '\'' +
-                ", order_id=" + orderId +
+                ", paymentDetails='" + paymentDetails + '\'' +
+                ", orderId=" + orderId +
+                ", localDate=" + localDate +
                 '}';
     }
 
