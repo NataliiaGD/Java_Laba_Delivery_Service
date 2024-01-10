@@ -1,0 +1,39 @@
+<customer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="customer.xsd">
+
+    <id>1</id>
+    <firstName>Tom</firstName>
+    <lastName>Brown</lastName>
+    <orders>
+        <order>
+            <id>1</id>
+            <orderDetails>burger</orderDetails>
+            <courierId>1</courierId>
+            <customerId>1</customerId>
+        </order>
+        <order>
+            <id>2</id>
+            <orderDetails>pizza</orderDetails>
+            <courierId>2</courierId>
+            <customerId>1</customerId>
+        </order>
+        <order>
+            <id>3</id>
+            <orderDetails>sushi</orderDetails>
+            <courierId>3</courierId>
+            <customerId>1</customerId>
+        </order>
+    </orders>
+    <deliveryAddresses>
+        <deliveryAddress>
+            <id>1</id>
+            <address>Leeton Ridge Street,1</address>
+            <customerId>1</customerId>
+        </deliveryAddress>
+        <deliveryAddress>
+            <id>2</id>
+            <address>Wellington Ave.,2</address>
+            <customerId>1</customerId>
+        </deliveryAddress>
+    </deliveryAddresses>
+</customer>

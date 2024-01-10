@@ -1,8 +1,11 @@
 package com.laba.solvd.delivery.domain;
 
+import java.util.List;
+
 public class Company {
     private int id;
     private String name;
+    private List<Courier> couriers;
 
     public Company(int id, String name) {
         this.id = id;

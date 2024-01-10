@@ -1,0 +1,32 @@
+<company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="company.xsd">
+
+    <id>1</id>
+    <name>Company A</name>
+    <couriers>
+        <courier>
+            <id>1</id>
+            <firstName>Bob</firstName>
+            <lastName>Peterson</lastName>
+            <companyId>1</companyId>
+        </courier>
+        <courier>
+            <id>2</id>
+            <firstName>Steven</firstName>
+            <lastName>Anderson</lastName>
+            <companyId>1</companyId>
+        </courier>
+        <courier>
+            <id>3</id>
+            <firstName>John</firstName>
+            <lastName>Travis</lastName>
+            <companyId>1</companyId>
+        </courier>
+        <courier>
+            <id>4</id>
+            <firstName>Tomas</firstName>
+            <lastName>Orange</lastName>
+            <companyId>1</companyId>
+        </courier>
+    </couriers>
+</company>

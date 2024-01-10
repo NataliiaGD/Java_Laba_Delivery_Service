@@ -14,7 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-public class Program {
+public class XMLParser {
     static {
         System.setProperty("log4j.configurationFile", "log4j2.xml");
     }
@@ -23,7 +23,7 @@ public class Program {
 
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
-        File file = new File("src/main/resources/xml/hierarchy.xml");
+        File file = new File("src/main/resources/xml/customer.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(file);
@@ -39,7 +39,6 @@ public class Program {
                 LOGGER.info(element.getTextContent());
             }
         }
-
 
     }
 }

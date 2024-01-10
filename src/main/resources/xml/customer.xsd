@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="OrderType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="orderDetails" type="xs:string"/>
+            <xs:element name="courierId" type="xs:string"/>
+            <xs:element name="customerId" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeliveryAddressType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="address" type="xs:string"/>
+            <xs:element name="customerId" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CustomerType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="orders" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="order" type="OrderType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deliveryAddresses" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="deliveryAddress" type="DeliveryAddressType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="customer" type="CustomerType"/>
+
+</xs:schema>

@@ -1,8 +1,6 @@
 package com.laba.solvd.delivery;
 
-import com.laba.solvd.delivery.domain.Company;
 import com.laba.solvd.delivery.domain.Courier;
-import com.laba.solvd.delivery.persistence.CompanyRepository;
 import com.laba.solvd.delivery.persistence.CourierRepository;
 import com.laba.solvd.delivery.persistence.impl.mybatis.PersistenceConfig;
 import org.apache.ibatis.session.SqlSession;
@@ -16,7 +14,6 @@ public class Program {
 
 
     private static final Logger LOGGER = LogManager.getLogger(Program.class);
-
 
 
     public static void main(String[] args) {
