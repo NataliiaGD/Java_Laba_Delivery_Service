@@ -3,14 +3,14 @@ package com.laba.solvd.delivery.domain;
 public class Order {
     private int id;
     private String orderDetails;
-    private int customerId;
     private int courierId;
+    private int customerId;
 
-    public Order(int id, String orderDetails, int customerId, int courierId) {
+    public Order(int id, String orderDetails, int courierId, int customerId) {
         this.id = id;
         this.orderDetails = orderDetails;
-        this.customerId = customerId;
         this.courierId = courierId;
+        this.customerId = customerId;
     }
 
     public Order() {
@@ -21,9 +21,9 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", order_details='" + orderDetails + '\'' +
-                ", customer_id=" + customerId +
-                ", courier_id=" + courierId +
+                ", orderDetails='" + orderDetails + '\'' +
+                ", courierId=" + courierId +
+                ", customerId=" + customerId +
                 '}';
     }
 
