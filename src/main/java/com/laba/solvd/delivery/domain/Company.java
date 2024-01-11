@@ -46,4 +46,12 @@ public class Company {
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<Courier> getCouriers() {
+        return couriers;
+    }
+
+    public void setCouriers(List<Courier> couriers) {
+        this.couriers = couriers;
+    }
 }

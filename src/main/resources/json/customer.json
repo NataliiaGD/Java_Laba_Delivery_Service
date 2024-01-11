@@ -1,0 +1,31 @@
+{
+  "id": 1,
+  "firstName": "Pedro",
+  "lastName": "Santiago",
+  "orders": [
+    {
+      "id": 1,
+      "orderDetails": "pizza",
+      "courierId": 1,
+      "customerId": 1
+    },
+    {
+      "id": 2,
+      "orderDetails": "burger",
+      "courierId": 2,
+      "customerId": 1
+    }
+  ],
+  "deliveryAddresses": [
+    {
+      "id": 1,
+      "address": "Wellington Ave.,2",
+      "customerId": 1
+    },
+    {
+      "id": 2,
+      "address": "Leeton Ridge Street,1",
+      "customerId": 1
+    }
+  ]
+}

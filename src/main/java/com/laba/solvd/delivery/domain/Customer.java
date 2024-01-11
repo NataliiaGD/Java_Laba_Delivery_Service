@@ -61,4 +61,20 @@ public class Customer {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public List<DeliveryAddress> getDeliveryAddresses() {
+        return deliveryAddresses;
+    }
+
+    public void setDeliveryAddresses(List<DeliveryAddress> deliveryAddresses) {
+        this.deliveryAddresses = deliveryAddresses;
+    }
 }
