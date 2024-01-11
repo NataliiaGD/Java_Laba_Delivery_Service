@@ -1,5 +1,7 @@
 package com.laba.solvd.delivery.domain;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.laba.solvd.delivery.parser.JacksonAdapter;
 import com.laba.solvd.delivery.parser.MyAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -15,6 +17,7 @@ public class Payment {
     private String paymentDetails;
     private int orderId;
     @XmlJavaTypeAdapter(MyAdapter.class)
+    @JsonDeserialize(using = JacksonAdapter.class)
     private LocalDate localDate;
 
     public Payment(int id, String paymentDetails, int orderId) {
@@ -59,5 +62,13 @@ public class Payment {
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
+    }
+
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
     }
 }
